@@ -29,7 +29,7 @@ bool os_has_conpty_working(void)
 TriState os_dyn_conpty_init(void)
 {
   uv_lib_t kernel;
-  if (uv_dlopen("kernel32.dll", &kernel)) {
+  if (uv_dlopen("conpty.dll", &kernel)) {
     uv_dlclose(&kernel);
     return kFalse;
   }
